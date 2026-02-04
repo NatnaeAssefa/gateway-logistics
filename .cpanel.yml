@@ -1,0 +1,9 @@
+---
+# cPanel Git deployment for Gateway Logistics (Next.js static export)
+# After git pull, this runs: install deps, build, then copy out/ to public_html.
+
+deployment:
+  tasks:
+    - npm ci
+    - npm run build
+    - /bin/cp -R out/* $HOME/public_html/
